@@ -1,8 +1,17 @@
-
+import { Typography, Paper, AppBar, Toolbar, Grid } from "@mui/material";
 
 function TodoApp() {
     return (
-        <h1>TodoApp</h1>
+        <Paper
+            style={{
+                padding: 0,
+                margin: 0,
+                height: "100vh",
+                backgroundColor: "#fafafa"
+            }}
+            elevation={0}
+        >
+        </Paper >
     );
 }
 
