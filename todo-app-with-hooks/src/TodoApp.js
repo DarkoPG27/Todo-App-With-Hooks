@@ -1,5 +1,4 @@
 import useTodoState from "./hooks/useTodoState";
-import { useEffect } from "react";
 import { Typography, Paper, AppBar, Toolbar, Grid } from "@mui/material";
 import TodoList from "./TodoList";
 import TodoForm from "./TodoForm";
@@ -8,10 +7,6 @@ function TodoApp() {
 
     const initialTodos = JSON.parse(window.localStorage.getItem("todos") || "[]");
     const { todos, addTodo, removeTodo, toggleTodo, editTodo } = useTodoState(initialTodos);
-
-    useEffect(() => {
-        window.localStorage.setItem("todos", JSON.stringify(todos));
-    }, [todos]);
 
     return (
         <Paper
