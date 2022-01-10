@@ -7,8 +7,8 @@ import { v4 as uuidv4 } from 'uuid';
 function TodoApp() {
 
     const initialTodos = [
-        { id: 1, task: "Wash Car", completed: false },
-        { id: 2, task: "Walking dog", completed: false }
+        { id: 1, task: "Wash Car", completed: false }
+
     ];
 
     const [todos, setTodos] = useState(initialTodos);
@@ -28,6 +28,12 @@ function TodoApp() {
         setTodos(updatedTodos);
     }
 
+    const editTodo = (todoId, newTask) => {
+        const updatedTodos = todos.map(todo =>
+            todo.id === todoId ? { ...todo, task: newTask } : todo);
+        setTodos(updatedTodos);
+
+    }
 
     return (
         <Paper
@@ -47,7 +53,12 @@ function TodoApp() {
             <Grid container justifyContent="center" style={{ marginTop: "1rem" }}>
                 <Grid item xs={11} md={8} lg={4}>
                     <TodoForm addTodo={addTodo} />
-                    <TodoList todos={todos} removeTodo={removeTodo} toggleTodo={toggleTodo} />
+                    <TodoList
+                        todos={todos}
+                        removeTodo={removeTodo}
+                        toggleTodo={toggleTodo}
+                        editTodo={editTodo}
+                    />
                 </Grid>
             </Grid>
         </Paper >
