@@ -7,8 +7,7 @@ function TodoForm({ addTodo }) {
         <Paper style={{ margin: "1rem 0", padding: " 0 1rem" }}>
             <form onSubmit={e => {
                 e.preventDefault();
-                addTodo(value);
-                reset();
+                value.length > 3 && addTodo(value) && reset();
             }}>
                 <TextField
                     value={value}
@@ -16,6 +15,7 @@ function TodoForm({ addTodo }) {
                     margin="normal"
                     label="Add New Todo"
                     fullWidth
+
                 />
             </form>
         </Paper>

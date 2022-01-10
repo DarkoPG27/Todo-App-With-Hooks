@@ -13,7 +13,6 @@ function EditTodoForm({ id, task, editTodo, toggleEditForm }) {
             style={{
                 marginLeft: "1rem",
                 width: "50%",
-
             }}
         >
             <TextField

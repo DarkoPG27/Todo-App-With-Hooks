@@ -9,4 +9,4 @@ export default initialVal => {
         setValue("");
     };
     return [value, handleChange, reset];
-};
+}; 
