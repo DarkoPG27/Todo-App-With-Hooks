@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Typography, Paper, AppBar, Toolbar, Grid } from "@mui/material";
 import TodoList from "./TodoList";
 import TodoForm from "./TodoForm";
+import { v4 as uuidv4 } from 'uuid';
 
 function TodoApp() {
 
@@ -13,7 +14,7 @@ function TodoApp() {
     const [todos, setTodos] = useState(initialTodos);
 
     const addTodo = newTodoText => {
-        setTodos([...todos, { id: 4, task: newTodoText, completed: false }]);
+        setTodos([...todos, { id: uuidv4(), task: newTodoText, completed: false }]);
     }
 
     const removeTodo = todoId => {
