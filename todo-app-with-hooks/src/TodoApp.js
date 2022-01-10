@@ -1,6 +1,16 @@
+import { useState } from "react";
+import TodoList from "./TodoList";
 import { Typography, Paper, AppBar, Toolbar, Grid } from "@mui/material";
 
 function TodoApp() {
+
+    const initialTodos = [
+        { id: 1, task: "Wash Car", completed: false },
+        { id: 2, task: "Walking dog", completed: false }
+    ];
+
+    const [todos, setTodos] = useState(initialTodos)
+
     return (
         <Paper
             style={{
@@ -16,6 +26,9 @@ function TodoApp() {
                     <Typography color="inherit" >TODOS WITH HOOKS</Typography>
                 </Toolbar>
             </AppBar>
+            <TodoList todos={todos}>
+
+            </TodoList>
         </Paper >
     );
 }
