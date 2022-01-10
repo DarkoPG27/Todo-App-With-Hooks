@@ -1,10 +1,21 @@
+import { Paper, List, ListItem, ListItemText, Divider } from "@mui/material";
+
 function TodoList(props) {
     return (
-        <div>
-            {props.todos.map(todo => (
-                <li>{todo.task}</li>
-            ))}
-        </div>
+        <Paper>
+            <List>
+                {props.todos.map(todo => (
+                    <>
+                        <ListItem>
+                            <ListItemText>
+                                {todo.task}
+                            </ListItemText>
+                        </ListItem>
+                        <Divider />
+                    </>
+                ))}
+            </List>
+        </Paper>
     );
 }
 
